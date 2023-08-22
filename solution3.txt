@@ -1,0 +1,12 @@
+with open("BCA.txt","w") as file_write:
+    file_write.writelines(data)
+
+line_count = 0
+with open("BCA.txt","r") as file_read,\
+     open("intro.txt",'w') as intro_file_write:
+    for i in file_read.readlines():
+        if i[0].lower() in ['a','b','c']:
+            intro_file_write.writelines(i)
+            line_count+=1
+    msg = f'Total line : {line_count}'
+    intro_file_write.writelines(msg)
